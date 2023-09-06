@@ -12,5 +12,5 @@ indices:
         select: head > meta[property="og:title"]
         value: attribute(el, "content")
       cardContent:
-        select: main > div.merch-card
+        select: main div.merch-card
         value: innerHTML(el)
