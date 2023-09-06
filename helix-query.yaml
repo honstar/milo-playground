@@ -1,0 +1,16 @@
+version: 1
+indices:
+  default:
+    include:
+      - /fragments/cards/**
+    target: /query-index-cards.xslx
+    properties:
+      lastModified:
+        select: none
+        value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
+      title:
+        select: head > meta[property="og:title"]
+        value: attribute(el, "content")
+      cardContent:
+        select: main > div.merch-card
+        value: innerHTML(el)
