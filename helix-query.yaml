@@ -20,3 +20,7 @@ indices:
       tags:
         select: head > meta[name="cardtags"]
         value: attribute(el, "content")
+      publicationDate:
+        select: head > meta[name="publication-date"]
+        value: |
+          dateValue(attribute(el, 'content'), 'MM-DD-YYYY')
