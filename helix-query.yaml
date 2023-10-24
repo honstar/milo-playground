@@ -5,6 +5,9 @@ indices:
       - /fragments/cards/**
     target: /query-index-cards.xslx
     properties:
+      lastModified:
+        select: none
+        value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
       title:
         select: head > meta[property="og:title"]
         value: attribute(el, "content")
@@ -17,3 +20,6 @@ indices:
       tags:
         select: head > meta[name="cardtags"]
         value: attribute(el, "content")
+      publicationDate:
+        select: none
+        value: parseTimestamp(headers["date"], "ddd, DD MMM YYYY hh:mm:ss GMT")
