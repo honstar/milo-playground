@@ -20,6 +20,9 @@ indices:
       tags:
         select: head > meta[name="cardtags"]
         value: attribute(el, "content")
+      multiTags:
+        select: head > meta[name="tags"]
+        value: attribute(el, "content")
       publicationDate:
         select: none
         value: parseTimestamp(headers["date"], "ddd, DD MMM YYYY hh:mm:ss GMT")
