@@ -18,11 +18,8 @@ indices:
         select: main > div
         value: innerHTML(el)
       tags:
-        select: head > meta[name="cardtags"]
-        value: attribute(el, "content")
-      multiTags:
         select: head > meta[property="article:tag"]
-        value: attribute(el, "content")
+        values: attribute(el, "content")
       publicationDate:
         select: none
         value: parseTimestamp(headers["date"], "ddd, DD MMM YYYY hh:mm:ss GMT")
