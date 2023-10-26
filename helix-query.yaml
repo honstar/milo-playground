@@ -3,6 +3,7 @@ indices:
   default:
     include:
       - /fragments/cards/**
+      - /fragments/promo/**
     target: /query-index-cards.xslx
     properties:
       lastModified:
